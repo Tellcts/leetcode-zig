@@ -1,7 +1,12 @@
 const std = @import("std");
 const leetcode = @import("leetcode");
 
-pub fn main() !void {
-    std.debug.print("{}", .{leetcode.hot100.array.q1.add(1, 2)});
-    _ = leetcode.hot100.array.q1.add(1, 2);
+pub fn main() void {
+    var x: i32 = undefined;
+    var y: i32 = undefined;
+
+    const tuple = .{ 1, 2 };
+    x, y = tuple;
+    x, y = .{ y, x };
+    std.debug.print("{} {}", .{ x, y });
 }

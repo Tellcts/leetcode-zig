@@ -7,7 +7,7 @@ pub fn build(builder: *std.Build) void {
 
     // 添加对外模块，使得用户可以直接通过`@import("leetcode")`直接导入
     const mod = builder.addModule("leetcode", .{
-        .root_source_file = builder.path("src/root.zig"),
+        .root_source_file = builder.path("src/lib.zig"),
         .target = target,
     });
 
@@ -16,7 +16,7 @@ pub fn build(builder: *std.Build) void {
         .name = "my_lib",
         .linkage = .static,
         .root_module = builder.createModule(.{
-            .root_source_file = builder.path("src/root.zig"),
+            .root_source_file = builder.path("src/lib.zig"),
             .target = target,
             .optimize = optimize,
         }),
@@ -26,7 +26,7 @@ pub fn build(builder: *std.Build) void {
         .name = "my_lib",
         .linkage = .dynamic,
         .root_module = builder.createModule(.{
-            .root_source_file = builder.path("src/root.zig"),
+            .root_source_file = builder.path("src/lib.zig"),
             .target = target,
             .optimize = optimize,
         }),
