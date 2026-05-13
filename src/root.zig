@@ -1,8 +1,6 @@
 //! By convention, root.zig is the root source file when making a package.
-const std = @import("std");
-pub const dp = @import("dp/root.zig");
-pub const array = @import("array/root.zig");
+pub const hot100 = @import("hot100/root.zig");
 
 test {
-    std.testing.refAllDecls(@This());
+    @import("std").testing.refAllDecls(@This());
 }
